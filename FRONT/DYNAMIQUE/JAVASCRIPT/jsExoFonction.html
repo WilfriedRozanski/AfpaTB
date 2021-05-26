@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>JAVASCRIPT FONCTION Exos</title>
+
+</head>
+<body>
+    <script>
+        function maFonction() 
+        { //Déclaration avec Var donc variable locale uniquement utilisable dans la fonction 
+        var plop1 = 123;       
+        return plop1;
+        }
+        function maFonction2() 
+        {   //Déclaration global, donc pas besoin de return
+        plop2 = 456;     
+        }
+        plop1 = maFonction();
+        console.log("fonction 1 / plop1 : "+plop1);
+        maFonction2();
+        console.log("mafonction2 > plop2 : "+plop2);
+
+        function boucle(x) 
+        {
+            if (x >= 10) 
+            { 
+                return; 
+            }
+            console.log("x : "+x);
+            boucle(x + 1); // appel récursif
+        }
+        boucle(0); // appel initial de la fonction
+    </script>
+    <div class="container">
+
+        <div class="row">   
+            <div class="col-12">
+                <h1 style="text-align: center;">JAVASCRIPT  FONCTION Exos</h1>    
+            </div>        
+        </div>
+        <h1>Portée d'une variable dans une fonction | Javascript</h1>
+        <hr>       
+             
+        <div id="idimage"></div>
+            <script>
+            //Exo 1
+                var papillon="./src/img/papillon.jpg";
+                function AffichImg(image)
+                {
+                    var imageAffich = document.createElement("img");
+                    imageAffich.src =image;
+                    var imagediv = document.getElementById("idimage");
+                    imagediv.appendChild(imageAffich);
+                    //block.setAttribute("style", "text-align:center"); changer le style
+                    //imagediv.innerHTML = ''; permet d'aller chercher le contenu de la div et de la vider
+                }
+                AffichImg(papillon);
+
+                var testnb=false;
+                do
+                {
+                    var x= parseInt(prompt("Cette page indique\nEntrer un nombre"));
+                    var y= parseInt(prompt("Cette page indique\nEntrer un multiplicateur"));
+                    if(isNaN(x) || (isNaN(y)))
+                    {
+                        alert("Vous n'avez pas saisi deux nombres corrects");
+                    }
+                    else
+                    {
+                        testnb=true;
+                        break;
+                    }
+                }while(testnb=true);
+                function produit(x,y)
+                {
+                    var produit =x*y;
+                    return produit;
+                }
+                document.write("Le produit de "+x+" x "+y+" est égale à "+produit(x,y));
+                
+            </script> 
+        </div>
+        <script>
+            //Exo2
+            var mastr="robert;dupont;amiens;80000";     
+            var cpt=0; 
+            var resultat="";
+            function strtok(str1,str2,n)
+            {
+                for(i=0; i<str1.length; i++)
+                {
+                    var lettre = str1.substring(i, i+1);
+                    console.log("test0 i "+i+" lettre "+lettre);
+                    if(lettre.indexOf(str2) != -1)
+                    {
+                        cpt++;
+                    }
+                    if((cpt===n-1)&&(lettre!=";"))
+                    {
+                        resultat += str1.substring(i,i+1);
+                        console.log("test2 i "+i+" cpt "+cpt+" lettre "+lettre+" resultat "+resultat);
+                    }
+                    console.log("test1 i "+i+" cpt "+cpt+" lettre "+lettre+" resultat "+resultat);
+                    if(cpt===n)
+                    {
+                        return resultat;
+                    }
+                }  
+            }
+            document.write("\n Exo2 :\nLe résultat est "+strtok(mastr,";",3));
+        </script>
+    </div>
+</body>
+</html>

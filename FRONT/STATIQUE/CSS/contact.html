@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+ 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Contact</title>
+  <link rel="icon" href="src/img/Logo_Afpa.ico">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Concert+One&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <header>
+    <div class="banniere">
+        <img class="logo" src="src/img/jarditou_logo.jpg" alt="Texte alternatif de l'image" title="jardilogo">
+        <p class="txtbanniere">Tout le jardin</p> 
+    </div>
+    <ul>
+        <li><a href="index.html" title="Retour au début">Accueil</a></li>
+        <li><a href="tableau.html" title="Aller à la page Tableau">Tableau</a></li>
+        <li><a href="contact.html" title="Aller à la page Contact">Contact</a></li>
+    </ul>
+    <img class="promo" src="src/img/promotion.jpg" alt="Texte alternatif de l'image" title="promologo" >
+  </header>
+
+  <section>
+    <h2>Contact</h2><hr/>
+    <form>
+      <p>* Ces zones sont obligatoires </p>
+      <fieldset>
+        <legend>Vos coordonnées</legend>
+        <label for="nom">Votre nom*: </label><input type="text" name="nom" id="nom" pattern="[a-zA-ZÀ-ÿ ]*" required title="Entrez votre nom (que des caractères de l'alphabet latin)"><br>
+        <label for="prenom">Votre prénom*: </label><input type="text" name="prenom" id="prenom" pattern="[a-zA-ZÀ-ÿ ]*" required title="Entrez votre prénom (que des caractères l'alphabet latin)"><br>
+        <br>
+        <label for="feminin">Sexe*: </label>
+        <input type="radio" name="sexe" value="feminin" id="feminin" ><label for="feminin">Féminin</label>
+        <input type="radio" name="sexe" value="masculin" id="masculin"><label for="feminin">Masculin</label>
+        <br><br>
+        <label for="date">Date de naissance* : </label><input type="date" name="ddn" id="date" required title="Entrez votre date de naissance"><br>
+        <label for="codepostal">Code postal* : </label><input type="text" name="codepostal" id="codepostal" pattern="[0-9]{5}" required title="Entrez votre code postal au format 00000"><br>
+        <label for="adresse">Adresse : </label><input type="text" name="adresse" id="adresse"><br>
+        <label for="ville">Ville : </label><input type="text" name="ville" id="ville"><br>
+        <label for="email">Email* : </label><input type="email" name="email" id="email" placeholder="davelope@afpa.fr" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required title="Entrez votre email au format comme dans l'exemple"><br>
+      </fieldset><br>
+
+      <fieldset>
+          <legend>Votre Demande</legend>
+          <label for="sujet">Sujet* : </label>
+              <select id="sujet" name="sujet">
+                  <option value="selectdefaut" selected>Veuillez séléctionner un sujet</option>
+                  <option value="mescommandes">Mes commande</option>
+                  <option value="questionprod">Question sur un produit</option>
+                  <option value="reclamation">Réclamation</option>
+                  <option value="autres">Autres</option>
+              </select><br>
+          <label for="question">Votre question* : </label><textarea name="question" id="question" rows="3" cols="50" required title="Posez votre question"></textarea><br>
+      </fieldset><br>
+
+      <input type="checkbox" name="checkdemande" required> *J'accepte le traitement informatique de ce formulaire <br><br>
+      <button type="button">Envoyer</button> 
+      <button type="button">Annuler</button> 
+    </form>
+  </section>
+ 
+  <footer>
+    <ul>
+      <li><a href="#mentionlegalCible" title="Mention légal">Mentions légales</a></li>
+      <li><a href="#horairesCible" title="Horaires">Horaires</a></li>
+      <li><a href="#plansiteCible" title="Plan du site">Plan du site</a></li>
+    </ul>
+  </footer>
+
+</body>

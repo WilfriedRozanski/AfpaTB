@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Formulaires</title>
+    <script >
+        function checkForm(f) {
+                alert("Vous vous appelez : " + f.elements['nom'].value + " " + f.elements['prenom'].value);
+            return false; // n’envoie pas le formulaire
+        }
+        
+    </script>
+    </script>
+</head>
+<body>
+    <div class="container-fluid">
+<!--Cet événement appelle la méthode checkForm(), avec l’argument this et attend une réponse booléenne pour envoyer ou non le formulaire.-->
+        <h3>Intercepte la validation du formulaire</h2>
+        <form id="form1" name="form1" onsubmit="return checkForm(this);">
+            <input type="text" name= "nom" value="Dupont" />
+            <input type="text" name= "prenom" value="Eric" />
+            <input type="submit" id="idSubForm1" name="subForm1" value="Connection" />
+        </form>
+        <script>
+            function livre(auteur, editeur, prix) 
+            {
+                this.auteur = auteur;
+                this.editeur = editeur;
+                this.prix = prix;
+            }
+            var l1 = new livre("monAuteur", "monEditeur", 15.0);
+            document.write("Mon Auteur '" + l1.auteur + "' vaut " + l1.prix + " euros.");
+        </script>
+        <!--Exos -->
+        <h1>Exo Formulaire</h1>
+        <h3>Vos Coordonnées</h3>
+        <h5 style="color: red;">* Ces zones sont obligatoires pour envoyer le formulaire</h5>
+        <form id="formContact" name="formContact" onsubmit="return chekFormContact(this);"></form>
+            <table class="table table-bordered table-striped" >
+                <tr>
+                    <td>Société :</td>
+                    <td>
+                        <input type="text" id= "societe" name= "societe"/>
+                        <small class="text-danger">Vous devez rentrer un nombre.</small>
+                    </td>
+                    <td style="color: red;"> *</td>
+                </tr>
+                <tr>
+                    <td>Personne à contacter :</td>
+                    <td>
+                        <input type="text" id= "pcontact"  name= "pcontact"/>
+                        <small class="text-danger">Vous devez rentrer un nombre.</small>
+                    </td>
+                    <td style="color: red;"> *</td>
+                </tr>
+                <tr>
+                    <td>Adresse de l'entreprise :</td>
+                    <td><textarea name= "adresseSoc" id="adresseSoc" rows="2"></textarea></td>
+                   
+                </tr>
+                <tr>
+                    <td>Code Postal :</td>
+                    <td>
+                        <input type="text" id= "cpost"  name= "cpost"/>
+                        <small class="text-danger">Vous devez rentrer un nombre.</small>
+                    </td>
+                    <td style="color: red;"> *</td>
+                </tr>
+                <tr>
+                    <td>Ville :</td>
+                    <td>
+                        <input type="text" id= "ville"  name= "ville"/>
+                        <small class="text-danger">Vous devez rentrer un nombre.</small>
+                    </td>
+                    <td style="color: red;"> *</td>
+                </tr>
+                <tr>
+                    <td>E-mail :</td>
+                    <td>
+                        <input type="text" id= "email"  name= "email " placeholder="davelope@afpa.fr"/>
+                        <small class="text-danger">Vous devez rentrer un nombre.</small>
+                    </td>
+                    <td style="color: red;"> *</td>
+                </tr>
+                <tr>
+                    <td>Téléphone :</td>
+                    <td>
+                        <input type="text" id= "tel"  name= "tel"/>
+                        <small class="text-danger">Vous devez rentrer un nombre.</small>
+                    </td>       
+                </tr>
+                <tr>
+                    <td>Sélectionnez l'environnement technique du projet :<br>
+                        <select id="tech"  name="choixtech">
+                            <option value="selectdefaut" selected>Choisissez</option>
+                            <option value="Acces">Acces</option>
+                            <option value="Java">Java</option>
+                            <option value="Delphi">Delphi</option>
+                            <option value="Windev">Windev</option>
+                            <option value="VisualBasic">VisualBasic</option>
+                            <option value="Autres">Autres</option>
+                        </select>
+                    </td>
+                    <td><textarea name="textarea"  id="textarea" rows="2"></textarea></td>
+           
+                </tr>
+                </table>
+                <tr>
+                    <td><input type="submit" id="btSubFormEnvoyer" name="subFormContactEnvoyer" value="Envoyer" /></td>
+                    <td><input type="submit" id="btSubFormEffacer" name="subFormContactEffacer" value="Effacer" /></td>
+                </tr>   
+            </table>
+        </form>
+       
+    </div>
+    <script src="assets/js/jsExoFormulaires.js"></script>
+</body>
+</html>

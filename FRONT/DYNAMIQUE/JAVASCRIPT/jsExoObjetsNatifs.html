@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Objets Natifs</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <script>
+        var str = new String("toto");
+        var str = "toto";  // toute chaîne de caractère est un objet String.
+        var myDate1 = new Date() ;  // Date du jour
+        var myDate2 = new Date(3600*24*365*40) ;    // Date depuis le 1er janvier 1970
+        var myDate3 = new Date(2012, 9, 19) ;
+        var myDate4 = new Date(2012, 9, 19, 10, 33, 12);
+        var myDate5 = new Date("Jan 1, 2000 00:00:00");
+
+        console.log('new Date() : ' + myDate1.toLocaleString()); 
+        console.log('new Date(3600*24*365*40) : ' + myDate2.toLocaleString());
+        console.log('new Date(2012, 9, 19) : ' + myDate3.toLocaleString());
+        console.log('new Date(2012, 9, 19, 10, 33, 12) : ' + myDate4.toLocaleString());
+        console.log('new Date("Jan 1, 2000 00:00:00") : ' + myDate5.toLocaleString());
+        console.log("");
+        var annee = 1900 + myDate1.getYear();
+        var mois  = myDate1.getMonth() + 1;
+        var jour  = myDate1.getDate();
+        console.log('date du jour : ' + jour + "/" + mois + "/" + annee);
+        //Préchargement d'une image
+        var img1 = new Image();  
+        img1.src = "src/img/papillon.jpg";
+        </script>
+        <!-- Affichage de l'image -->
+        <img src="src/img/papillon.jpg" onMouseOver="this.src=img1.src;">
+        <div>
+            <p>Exo :</p>
+        </div>
+        <script>
+            // tabVal= new Array();  OU
+            tabVal= [];
+            do
+            {
+                var Val = window.parseInt(prompt("Veuillez saisir une valeure (0 pour arreter)"));
+                if(isNaN(Val))
+                {
+                    alert("Vous n'avez pas saisie une valeure correcte");
+                }  
+                else
+                {
+                    tabVal.push(Val);
+                }
+            }while((isNaN(Val)) || (Val!=0));
+            
+            tabVal.pop();
+            tabchaine=tabVal.join(",");
+            nbval=tabVal.length;
+            tslice=tabVal.slice(0,nbval);
+            somme=0;
+            for (const i in tabVal) 
+            {
+                somme+=tabVal[i];
+            }
+            moyenne=somme/nbval;
+            if(nbval==0){moyenne=0;}
+            document.write(" Vous avez saisie "+nbval+" qui sont : "+tabchaine+" ,la somme est de "+somme+" et la moyenne est de: "+moyenne+" fct slice :"+tslice);
+        </script>
+    </div>
+</body>
+</html>

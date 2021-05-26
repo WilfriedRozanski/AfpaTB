@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Evaluation Exo 1</title>
+</head>
+
+<body>
+    <div class = "container-fluid">
+        <script>
+            var cptinf20 = 0;
+            var cptsup40 = 0;
+            var cpt20a40 = 0;
+            do // Test jusqu'a ce que l'utilisateur rentre un entier => 100
+            {
+                do // Test jusqu'a ce que l'utilisateur rentre un entier
+                {
+                    var age = parseInt(prompt("Veuillez saisir lâge des personnes(Arrêt automatique au premier centenaire)"));
+                    if(isNaN(age))
+                    {
+                        alert("Vous n'avez pas saisi un entier!\nRecommencez");
+                    }            
+                }while(isNaN(age));
+                document.write("<br>Age saisie : "+age);
+                if(isNaN(age))// Test si l'age saisi est bien un entier
+                {
+                    alert("Vous n'avez pas saisi un entier superieur à 0 !\nRecommencez");
+                }
+                else if(age < 20)
+                {
+                    cptinf20++;
+                }
+                else if((age > 40) && (age < 100))
+                {
+                    cptsup40++;
+                }
+                else if(age >= 20 && age <= 40)
+                {
+                    cpt20a40++;
+                }
+                else // Test par élimination du centenaire
+                {
+                    cptsup40++;// Le centenaire est inclue dans la catégorie >40
+                    alert("Nb de personnes <20 : "+cptinf20+"\nNb de personnes >40 : "+cptsup40+
+                            "\nNb de personnes entre 20 et 40 : "+cpt20a40+"\nEt votre centenaire a : "+age+" ans!");
+                } 
+            }while(age < 100);
+        </script>
+    </div>
+</body>
+</html>

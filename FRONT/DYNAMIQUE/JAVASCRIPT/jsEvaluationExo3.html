@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Evaluation Exo 3</title>
+</head>
+
+<body>
+    <div class = "container-fluid">
+        <script>
+            //var tab = ["Audrey","Flavien"] // Pour test
+            var tab = ["Audrey", "Aurélien", "Flavien", "Jérémy", "Laurent", "Melik", "Nouara", "Salem", "Samuel", "Stéphane"];
+            document.write("<br>La Liste contient : "+tab);
+            do
+            {
+                var chaineSaisie = prompt("Veuillez saisir un prénom :\n(Faites attention aux accents et majusucle!)");
+                if(tab.indexOf(chaineSaisie) != -1)// Test si le prénom saisi se trouve dans notre tableau
+                {
+                    document.write("<br>Vous avez saisi "+chaineSaisie+" et ce prénom est bien dans la liste!");
+                    tab.splice(tab.indexOf(chaineSaisie),1);// Suprression du prénom dans le tableau
+                    tab.push('" "');// Ajout d'un élément contenant un espace en fin de tableau
+                }
+                else
+                {
+                    document.write("<br>Vous avez saisi "+chaineSaisie+" mais ce prénom n'est pas dans la liste!");
+                }
+                document.write("<br>La Liste est désormais : "+tab);
+                if(tab[0] == '" "') // Test si tout le tableau a pas deja était vidé
+                {
+                    document.write("<br>Vous avez trouvé tous les prénoms de la liste!");
+                    okAffichage = false;
+                    break;// On force la sortie de boucle dans ce cas
+                }   
+                var okAffichage = confirm("Voulez vous continuer à chercher des prénoms?");
+                    // Variable booléenne affectée à une boite de confirmation pour sortir du choix des prénoms  
+            }while(okAffichage != false);    
+            document.write("<br>Fin de la Recherche des prénoms");
+        </script>
+    </div>
+</body>
+</html>

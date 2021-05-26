@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+ 
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="icon" href="src/img/Logo_Afpa.ico">
+    <title>Page D'accueil</title>
+</head>
+
+<body>
+  <div class="container-fluid"> 
+    <header>
+      <div  class="d-none d-lg-block">            
+        <div class="row">
+            <div class="col">
+                <img  srcset="src/img/jarditou_logo.jpg 4x" class="img-fluid"  alt="Jarditout" title="Jarditout logo">
+            </div>
+            <div class="col text-right">
+                    <p class="h1">Tout le jardin</p>        
+            </div>    
+        </div>
+      </div>
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">Jarditout.com</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarjarditout" aria-controls="navbarjarditout" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarjarditout">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Accueil <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="tableau.html">Tableau</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Votre promotion" aria-label="recherche">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
+          </form>
+        </div>
+      </nav>
+      <img src="src/img/promotion.jpg" class="w-100" alt="Texte alternatif de l'image" title="promologo" >   
+    </header>
+
+    <section>
+      <div class="form-group">
+        <form>
+          <p><small>* Ces zones sont obligatoires </small></p>
+          <legend>Vos coordonnées</legend>
+          <label for="nom">Votre nom*: </label>
+          <input type="text" class="form-control" name="nom" id="nom" pattern="[a-zA-ZÀ-ÿ ]*" placeholder="Veuillez saisir votre nom" required title="Entrez votre nom (que des caractères de l'alphabet latin)"><br>
+          <label for="prenom">Votre prénom*: </label>
+          <input type="text" class="form-control" name="prenom" id="prenom" pattern="[a-zA-ZÀ-ÿ ]*" placeholder="Veuillez saisir votre prénom" required title="Entrez votre prénom (que des caractères l'alphabet latin)"><br>
+
+          <label class="form-check-label">Sexe*: </label>
+          <fieldset class="form-group">
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" name="sexe" value="feminin" id="feminin" >
+              <label for="feminin" class="form-check-label">Féminin</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" name="sexe" value="masculin" id="masculin">
+              <label for="feminin" class="form-check-label">Masculin</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-input" name="sexe" value="neutre" id="neutre">
+              <label for="feminin" class="form-check-label">Neutre</label>
+            </div>
+          </fieldset>
+
+          <div class="input-group date" id="date"></div>
+            <label for="date">Date de naissance* : </label>
+            <input type="date" class="form-control" name="ddn" id="date" placeholder="jj/mm/aaaa" required title="Entrez votre date de naissance"><br>
+          </div>
+
+          <label for="codepostal">Code postal* : </label>
+          <input type="text" class="form-control" name="codepostal" id="codepostal" pattern="[0-9]{5}" required title="Entrez votre code postal au format 00000"><br>
+          <label for="adresse">Adresse : </label>
+          <input type="text" class="form-control" name="adresse" id="adresse"><br>
+          <label for="ville">Ville : </label>
+          <input type="text" class="form-control" name="ville" id="ville"><br>
+          <label for="email">Email* : </label>
+          <input type="email" class="form-control" name="email" id="email" placeholder="davelope@afpa.fr" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required title="Entrez votre email au format comme dans l'exemple"><br>
+              
+          <legend>Votre Demande</legend>
+          <label for="sujet">Sujet* : </label>
+              <select id="sujet" class="form-control " name="sujet">
+                <option value="selectdefaut" selected>Veuillez séléctionner un sujet</option>
+                <option value="mescommandes">Mes commande</option>
+                <option value="questionprod">Question sur un produit</option>
+                <option value="reclamation">Réclamation</option>
+                <option value="autres">Autres</option>
+              </select><br>
+
+          <label for="question">Votre question* : </label>
+          <textarea name="question" class="form-control" id="question" rows="2" required title="Posez votre question"></textarea><br>
+          
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" name="checkdemande" required> *J'accepte le traitement informatique de ce formulaire <br><br>
+          </div>
+          <button type="button" class="btn btn-outline-primary btn-dark">Envoyer</button> 
+          <button type="button" class="btn btn-outline-primary btn-dark">Annuler</button> 
+        </form>
+      </div>
+    </section>
+  
+    <footer>
+      <nav class="navbar navbar-expand navbar-dark bg-dark">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#mentionlegalCible">Mentions légales</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#horairesCible">Horaires</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#plansiteCible">Plan du site</a>
+            </li>
+        </ul>
+      </nav>
+    </footer>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</body>

@@ -1,0 +1,173 @@
+html {
+    font-size: 62.5%;
+}
+/*header{
+   
+    background-color: rgb(7, 214, 24);
+    border: 2px solid  rgb(1, 255, 255);
+}*/
+.banniere{
+    display: flex;
+    /*border: 2px solid  rgb(255, 251, 1);*/
+}
+@media screen and (min-width: 768px) 
+{ 
+    .logo{
+        width: 20%;
+        height: auto;
+        /*border: 2px solid  rgb(197, 3, 123);*/
+    }
+    .txtbanniere{
+        width: 70%;
+        align-self: center;
+        text-align: center;
+        font-size: 2.0rem;
+        font-weight:bold;
+        font-family:Arial, Helvetica, sans-serif;
+        /*font: inherit; perte d'heritage du h4
+        background-color: red;
+        border: 2px solid  blue;*/   
+    }
+    ul{
+        padding: 10px;
+        padding-left: 40px;
+        background: #000000;
+        /*border: 2px solid  rgb(255, 251, 1);*/
+    
+    }
+    li{
+        display: inline-block;
+        font-size: 2.0rem;
+    }
+    a{
+        color:#ffffff;
+    }
+    .promo{
+        box-sizing: border-box;
+        align-self: center;
+        width: 100%; 
+        height: auto;
+        /*border: 2px solid  rgb(255, 251, 1);*/
+    }
+    section{
+        width: 100%;
+        margin-top: 10px;
+        font-size: 1.5rem;
+        /*overflow:auto;*/
+        /*background-color: rgb(112, 112, 243);
+        border: 2px solid red;*/
+    }
+    .corpsaccueil{
+        width: 70%;
+        float: left;
+        /*overflow:auto;*/
+        /*background-color: rgb(112, 112, 243);
+        border: 2px solid red;*/
+    }
+    aside{
+        width: 27%;
+        height: 460px;
+        float: right;
+        margin-top: 10px;
+        background-color: #CCC;
+        /*border: 2px solid rgb(0, 0, 0);*/
+    }
+    table{
+        width:100%;
+        font-size:2.5rem;
+    }
+    img{
+        width:12rem;
+        height:5.5rem;
+    }
+    td{
+        max-width:70%;
+        height:auto;
+        text-align: center;
+    }
+    fieldset{
+        width: 97%;
+    }
+    footer{
+        float: left;
+        width: 100%;
+        
+        /*background-color:green;
+        border: 2px solid rgb(5, 154, 180);*/
+    }
+}
+@media screen and (max-width: 767px) 
+{ 
+    .logo{
+        width: 30%;
+        height: auto;
+        /*border: 2px solid  rgb(197, 3, 123);*/
+    }
+    .txtbanniere{
+        width: 70%;
+        align-self: center;
+        text-align: center;
+        font-size: 1.2rem;
+        font-weight:bold;
+        font-family:Arial, Helvetica, sans-serif;
+        /*font: inherit; perte d'heritage du h4
+        background-color: red;
+        border: 2px solid  blue;*/   
+    }
+    ul{
+        padding: 10px;
+        padding-left: 20px;
+        background: #000000;
+        /*border: 2px solid  rgb(255, 251, 1);*/
+    
+    }
+    li{
+        display: inline-block;
+        font-size: 1.0rem;
+    }
+    a{
+        color:#ffffff;
+    }
+    .promo{
+        box-sizing: border-box;
+        align-self: center;
+        width: 100%; 
+        height: auto;
+        /*border: 2px solid  rgb(255, 251, 1);*/
+    }
+    section{
+        width: 100%;
+        margin-top: 10px;
+        font-size: 1.1rem;
+        /*overflow:clip;*/
+        /*background-color: rgb(112, 112, 243);
+        border: 2px solid red;*/
+    }
+    aside{
+        display: none;
+    }
+    table{
+        width:97%;
+        font-size:1.5rem;
+    }
+    td{
+        text-align: center;
+    }
+    img{
+        width:8rem;
+        height:4rem;
+    }
+    fieldset{
+        width: 90%;
+    }
+    #question{
+        width:90%;
+    }
+    footer{
+        float: left;
+        width: 100%;
+        
+        /*background-color:green;
+        border: 2px solid rgb(5, 154, 180);*/
+    }
+}

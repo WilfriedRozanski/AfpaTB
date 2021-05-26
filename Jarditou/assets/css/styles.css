@@ -1,0 +1,63 @@
+/*changement de couleur d'une ligne spécifique dans le tableau avec la class striped */
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgb(255, 174, 0);
+}
+
+/* Code pour changer différents style concernant les bounton de type 'radio'
+ que les navigateurs ne permettent pas par défaut.*/
+input[type="radio"] {
+    /*  Pour la prise en charge de certain navigateur */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /* Défini la position des boutons */
+    position: relative;
+    bottom: -10px;
+    /* Défini l'apparence des boutons */
+    width: 25px;
+    height: 25px;
+    padding: 6px;
+    border-radius: 50%;
+    background-clip: content-box;
+    border: 1px solid #bbbbbb;
+    background-color: #e7e6e7;
+    
+}
+/* Défini l'apparence des labels associes aux boutons 'radio'*/
+.radio-sexe label {
+    position: relative;
+    bottom: -10px;
+    left: 6px;
+}
+
+/* Défini l'apparence des boutons 'radio' une fois check*/
+input[type="radio"]:checked {
+    background-color: #93e026;
+    
+}
+  
+/* Code pour changer différents style concernant les bounton de type 'checkbox'
+ que les navigateurs ne permettent pas par défaut.*/
+input[type="checkbox"] {
+    /*  Pour la prise en charge de certain navigateur */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /* Défini la position des boutons */
+    position: relative;
+    bottom: -5px;
+    /* Défini l'apparence des boutons */
+    width: 25px;
+    height: 25px;
+    padding: 6px;
+    background-clip: content-box;
+    border: 1px solid #bbbbbb;
+    background-color: #e7e6e7;
+    
+}
+  
+  /* Défini l'apparence des boutons 'checkbox' une fois check*/
+input[type="checkbox"]:checked {
+    background-color: #93e026;
+    
+}

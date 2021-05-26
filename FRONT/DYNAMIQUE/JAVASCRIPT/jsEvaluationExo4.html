@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Evaluation Exo 4</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <script>
+            do
+            {
+                do // Test jusqu'a ce que l'utilisateur rentre un décimal
+                {
+                    var PU = parseFloat(prompt("Veuillez saisir un prix décimal"));               
+                    if(isNaN(parseFloat(PU)))
+                    {
+                        alert("Vous n'avez pas saisi un prix décimal!\nRecommencez");
+                    }    
+                }while(isNaN(parseFloat(PU)));
+                document.write("<br>Prix saisie : "+PU);
+                do // Test jusqu'a ce que l'utilisateur rentre un entier pour la quantité
+                {
+                    var QTECOM = parseInt(prompt("Veuillez saisir une quantité"));               
+                    if(isNaN(parseInt(QTECOM)))
+                    {
+                        alert("Vous n'avez pas saisi une quantité correcte\nRecommencez");
+                    }    
+                }while(isNaN(parseInt(QTECOM)));
+                var TOT = PU*QTECOM; 
+                document.write("<br>Quantité saisie : "+QTECOM+" <br>Le total est de : "+TOT);
+                var REM = 0;
+                var port = 0;
+                var TotApresREM = TOT;
+                var Totfinal = 0;
+                if(TOT >= 100 && TOT <=200)
+                {
+                    REM = TOT/5;
+                    TotApresREM -= REM;
+                }
+                else if(TOT > 200)
+                {
+                    REM = TOT/10;
+                    TotApresREM -= REM
+                }
+                if(TotApresREM > 500) // Test des frais de port gratuit ou à 2%
+                {
+                    if(QTECOM > 1) // Test des quantités pour respecter une certaine synthaxe d'affichage
+                    {
+                        document.write("<br>Prix "+PU+"  € et quantité = "+QTECOM+" : "+TOT+" € donc remise 10% (-"+REM+"  €) soit "
+                        +TotApresREM+" € et frais port = "+port+"; à payer : "+TotApresREM);
+                    }
+                    else
+                    {
+                        document.write("<br>Prix "+PU+"  € et quantité = "+QTECOM+" : remise 10% (-"+REM+"  €) soit "
+                        +TotApresREM+" € et frais port = "+port+"; à payer : "+TotApresREM);
+                    }
+                }
+                else
+                {
+                    port = TotApresREM*0.02;
+                    if(TOT < 100) // Test sans Remise et donc avec des frais de port de 6
+                    {
+                        Totfinal = TotApresREM+6;
+                        if(QTECOM > 1)
+                        {
+                            document.write("<br>Prix "+PU+"  € et quantité = "+QTECOM+" : "+TOT+" € donc remise 0, frais de port 2% soit "
+                            +port+" donc le minimum de 6 € s'applique; à payer : "+TotApresREM+" + 6 = "+Totfinal);
+                        }
+                        else
+                        {
+                            document.write("<br>Prix "+PU+"  € et quantité = "+QTECOM+" : remise 0, frais de port 2% soit "
+                            +port+" donc le minimum de 6 € s'applique; à payer : "+TotApresREM+" + 6 = "+Totfinal);
+                        }
+                    }
+                    else if(TOT >= 100 && TOT <=200) // Test avec remise de 5% et donc avec des frais de port de 6
+                    {
+                        Totfinal = TotApresREM+6;
+                        if(QTECOM > 1)
+                        {
+                            document.write("<br>Prix "+PU+"  € et quantité = "+QTECOM+" : "+TOT+" € donc remise 5% soit "
+                            +TotApresREM+" € et frais port 2% soit "+port+" € donc le minimum de 6 € s'applique; à payer : "
+                            +TotApresREM+" + 6 = "+Totfinal);
+                        }
+                        else
+                        {
+                            document.write("<br>Prix "+PU+"  € et quantité = "+QTECOM+" : remise 5% soit "
+                            +TotApresREM+" € et frais port 2% soit "+port+" € donc le minimum de 6 € s'applique; à payer : "
+                            +TotApresREM+" + 6 = "+Totfinal);
+                        }
+                    }
+                    else // Test avec TOT>200(Remise 10%) mais avec frait de port TotApresREM<=500
+                    {
+                        Totfinal = TotApresREM+port;
+                        if(QTECOM > 1)
+                        {
+                            document.write("<br>Prix "+PU+"  € et quantité = "+QTECOM+" : "+TOT+" € donc remise 10% (-"+REM+"  €) soit "
+                            +TotApresREM+" € et frais port 2% (de "+TotApresREM+" €) soit +"+port+" € ; à payer : "
+                            +TotApresREM+" + "+port+" = "+Totfinal);
+                        }
+                        else
+                        {
+                            document.write("<br>Prix "+PU+"  € et quantité = "+QTECOM+" : remise 10% (-"+REM+"  €) soit "
+                            +TotApresREM+" € et frais port 2% (de "+TotApresREM+" €) soit +"+port+" € ; à payer : "
+                            +TotApresREM+" + "+port+" = "+Totfinal);
+                        }
+                    }
+                }
+                var okAffichage = confirm("Voulez vous continuer vos achats?");
+                // Variable booléenne affectée à une boite de confirmation pour sortir du choix des prénoms  
+            }while(okAffichage != false);    
+        </script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Evaluation Exo 2</title>
+</head>
+
+<body>
+    <div class = "container-fluid">
+        <script>
+            do // Test jusqu'a ce que l'utilisateur rentre un entier
+            {
+                var Multiple = parseInt(prompt("Veuillez saisir le nombre de la table de multiplication à afficher"));
+                if(isNaN(Multiple))
+                {
+                    alert("Vous n'avez pas saisi un entier!\nRecommencez");
+                }
+            }while(isNaN(Multiple));
+            var iteration = 1;
+            var resultat = 0;
+            do
+            {
+                resultat = iteration*Multiple;
+                document.write("<br>"+iteration+" x "+Multiple+" = "+resultat);
+                //Variable booléenne affectée à une boite de confirmation pour sortir de la table de multiplicaiton
+                var stopAffichage = confirm("Voulez vous continuer de visualiser la table de multiplication?");
+                if(stopAffichage == true)
+                {
+                    iteration++;
+                } 
+                else                 
+                {
+                    document.write("<br>Fin de la Table de Multiplication");
+                }
+            }while(stopAffichage != false);
+        </script>
+    </div>
+</body>
+</html>
